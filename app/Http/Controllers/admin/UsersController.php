@@ -44,22 +44,7 @@ class UsersController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request, [
-            'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
-        ]);
-
-        $user = new User();
-        $user->name = $request->name;
-        $user->email = $request->email;
-        $user->password = Hash::make('password');
-        $user->save();
-        
-        // Assign a  role for new user
-        $role = Role::select('id')->where('name', $request->role)->first();
-        $user->roles()->attach($role);     
-        return redirect()->route('admin.users.index')->with('success', 'Le nouveau membre a été ajouté avec succès!');
+        //
     }
 
     /**

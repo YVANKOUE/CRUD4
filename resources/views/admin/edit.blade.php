@@ -3,11 +3,7 @@
 @section('title') | Utilisateurs @endsection
 
 @section('content')
-<style>
-    input:checked{
-        border-color:#3490dc;
-    }
-</style>
+
 <br><br><br><br>
 <div class="row">
     <div class="col-md-2">
@@ -62,7 +58,7 @@
                         @endforeach
                         <br>
                         <div class="text-center">
-                            <button type="submit" class="btn btn-primary">Modifier</button>
+                            <button type="submit" class="btn btn-info font-weight-bolder">Modifier</button>
                            
                         </div>
                     </form>

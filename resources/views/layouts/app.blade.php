@@ -65,7 +65,7 @@
                                         @csrf
                                     </form>
                                     @can('management-users')
-                                    <a href="/admin/home" class="dropdown-item">Gestion des utilisateurs</a>
+                                    <a href="{{route('home.index')}}" class="dropdown-item">Gestion des utilisateurs</a>
                                     @endcan
                                 </div>
                             </li>

@@ -7,13 +7,13 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>School Admin @yield('title')</title>
+    <title>Orientation.key Admin @yield('title')</title>
 
     <link rel="apple-touch-icon" sizes="180x180" href="{{asset('vendors/images/apple-touch-icon.png')}}">
   	<link rel="icon" type="image/png" sizes="32x32" href="{{asset('vendors/images/favicon-32x32.png')}}">
   	<link rel="icon" type="image/png" sizes="16x16" href="{{asset('vendors/images/favicon-16x16.png')}}">
 
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css"></link>
     <!-- Custom fonts for this template -->
     
     <link href="{{asset('vendors/css/all.min.css')}}" rel="stylesheet" type="text/css">
@@ -22,7 +22,7 @@
 	  <link rel="stylesheet" type="text/css" href="{{asset('vendors/css/icon-font.min.css')}}">
 	  <link rel="stylesheet" type="text/css" href="{{asset('src/vendors/css/dataTables.bootstrap4.min.css')}}">
 	  <link rel="stylesheet" type="text/css" href="{{asset('src/plugins/datatables/css/responsive.bootstrap4.min.css')}}">
-	  <link rel="stylesheet" type="text/css" href="{{asset('vendors/css/style.css')}}">
+	 
     <!-- Custom styles for this template -->
 
     <!-- Fonts -->
@@ -30,6 +30,21 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{{asset('vendors/css/core.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('vendors/css/style.css')}}">
+
+    <!-- <script>
+      function Affiche(txt, idElement){
+        var elmt = document.getElementById(idElement);
+        elmt.innerHTML = txt ;
+        elmt.style.visibility = "visible";
+      }
+      function Cache(idElement){
+        var elmt = document.getElementById(idElement);
+        elmt.innerHTML = "&nbsp;" ;
+        elmt.style.visibility = "hidden";
+      }
+    </script> -->
+
+
 
 </head>
 <body id="page-top">
