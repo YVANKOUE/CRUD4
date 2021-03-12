@@ -20,22 +20,25 @@ class UsersTableSeeder extends Seeder
         
 
         $admin = user::create([
-             'name' => 'admin',
+             'name' => 'admin MK',
              'email' => 'admin@admin.com',
-             'password' => Hash::make('password')      
+             'avatars'  => 'IMG-YVAN.jpg' ,
+             'password' => Hash::make('password'),
              ]);
  
         $Superviseur = user::create([
-        'name' => 'Superviseur',
-        'email' => 'Superviseur@Superviseur.com',
-        'password' => Hash::make('password')      
+        'name' => 'Germaine',
+        'email' => 'Germaine@Superviseur.com',
+        'avatars'  => 'IMG-20201108-WA0012.jpg' ,
+        'password' => Hash::make('password'),
         ]);
  
  
         $Utilisateur = user::create([
             'name' => 'Utilisateur',
             'email' => 'Utilisateur@Utilisateur.com',
-            'password' => Hash::make('password')      
+            'avatars'  => '' ,
+            'password' => Hash::make('password') ,
             ]);
         $adminRole = Role::where('name','admin')->first();
         $SuperviseurRole = Role::where('name','Superviseur')->first();

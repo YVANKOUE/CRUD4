@@ -1,13 +1,16 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Reset Password') }}</div>
-
+<div class="login-wrap d-flex align-items-center flex-wrap justify-content-center">
+		<div class="container">
+			<div class="row align-items-center">
+				<div class="col-md-5 col-sm-6 col-xs-6 col-lg-6">
+					<img src="{{asset('vendors/images/forgot-password.png')}}" alt="">
+				</div>
+            <div class="card col-md-6 col-sm-5 col-xs-5 col-lg-6">
+                <div class="card-header row">{{ __('Reset Password') }}</div>
                 <div class="card-body">
+                <h5 class="mb-20">Enter your email address to reset your password</h5>
                     @if (session('status'))
                         <div class="alert alert-success" role="alert">
                             {{ session('status') }}
@@ -30,7 +33,6 @@
                                 @enderror
                             </div>
                         </div>
-
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">

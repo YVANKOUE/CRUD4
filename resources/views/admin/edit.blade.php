@@ -1,26 +1,19 @@
-@extends('admin.app')
+@extends('admin.app.appp')
 
 @section('title') | Utilisateurs @endsection
 
 @section('content')
-
-<br><br><br><br>
-<div class="row">
-    <div class="col-md-2">
-    </div>
-    <div class="col-md-10">
-        
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">Modifier <strong>{{$user->name}}</strong> </div>
-                <div class="card-body"> 
-                    <form action="{{route('admin.users.update' , $user)}}" method="POST">
+<div class="mobile-menu-overlay"></div>
+    <div class="main-container container">
+        <div class="pd-ltr-20">
+            <div class="row fielset formavlidation-wrapper m-auto justify-content-center">
+            <div class="col-md-10">
+                <div class="card card-statistics">
+                    <div class="card-header">Modifier <strong>{{$user->name}}</strong> </div>
+                        <div class="card-body">
+                        <form action="{{route('admin.users.update' , $user)}}" method="POST">
                         @csrf
                         @method('PATCH')
-
-
                         <div class="form-group row">
                             <label for="name" class="col-md-6 col-form-label  ">{{ __('nom') }}</label>
 
@@ -62,11 +55,11 @@
                            
                         </div>
                     </form>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</div>
     </div>
 </div>
 @endsection

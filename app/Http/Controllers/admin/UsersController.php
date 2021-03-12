@@ -86,7 +86,7 @@ class UsersController extends Controller
         $user->name = $request->name;
         $user->email = $request->email;
         $user->save();
-        return redirect()->route('admin.users.index');
+        return redirect()->route('admin.users.index')->with('status', 'profil modifier !');
     }
 
     /**
@@ -102,7 +102,8 @@ class UsersController extends Controller
             return redirect()->route('admin.users.index');
         }
         $user->roles()->detach();
+        $sms = $user->name;
         $user->delete();
-        return redirect()->route('admin.users.index');
+        return redirect()->route('admin.users.index')->with('status', 'utilisateur  '.$sms.' a été supprimé');
     }
 }

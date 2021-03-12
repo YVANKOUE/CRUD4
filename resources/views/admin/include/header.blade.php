@@ -120,12 +120,12 @@
 				<div class="dropdown">
 					<a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown">
 						<span class="user-icon">
-							<img src="{{asset('vendors/images/photo1.jpg')}}" alt="">
+							<img style="height: 50px; width:52px;" src="{{asset('vendors/images/'.auth()->user()->avatars)}}" alt="">
 						</span>
-						<span class="user-name">Ross C. Lopez</span>
+						<span class="user-name"> {{auth()->user()->name}}</span>
 					</a>
 					<div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
-						<a class="dropdown-item" href="profile.html"><i class="dw dw-user1"></i> Profile</a>
+						<a class="dropdown-item" href="{{route('admin.profil.show', auth()->user()->id)}}"><i class="dw dw-user1"></i> Profile</a>
 						<a class="dropdown-item" href="profile.html"><i class="dw dw-settings2"></i> Setting</a>
 						<a class="dropdown-item" href="faq.html"><i class="dw dw-help"></i> Help</a>
                         <form id="" action="{{ route('logout') }}" method="POST">
@@ -230,7 +230,7 @@
 			<div class="sidebar-menu">
 				<ul id="accordion-menu">
 					<li class="dropdown">
-						<a href="javascript:;" class="dropdown-toggle">
+						<a href="{{route('home.index')}}" class="dropdown-toggle no-arrow">
 							<span class="micon dw dw-house-1"></span><span class="mtext">Home</span>
 						</a>
 					</li>
@@ -239,10 +239,28 @@
 							<span class="micon dw dw-browser2"></span><span class="mtext">Administration</span>
 						</a>
 						<ul class="submenu">
-							<li><a href="{{route('admin.users.index')}}">Liste</a></li>
-							<li><a href="{{ route('admin.users.create') }}">Ajouter un membre</a></li>
-							<li><a href="advanced-components.html">Ajouter une Université</a></li>
-							<li><a href="form-wizard.html">Exporter</a></li>
+							<li class="dropdown">
+								<li class="dropdown">
+								<a href="javascript:;" class="dropdown-toggle">
+									<span class="micon fa fa-book"></span><span class="mtext">Listes</span>
+								</a>
+								<ul class="submenu">
+									<li><a href="{{route('admin.users.index')}}">Liste menbres inscrit</a></li>
+									<li><a href="{{ route('school.index')}}">Liste des universités</a></li>
+									<li><a href="form-wizard.html">Exporter</a></li>
+								</ul>
+							</li>
+							<li class="dropdown">
+								<li class="dropdown">
+								<a href="javascript:;" class="dropdown-toggle">
+									<span class="micon dw dw-invoice"></span><span class="mtext">Créer</span>
+								</a>
+								<ul class="submenu">
+									<li><a href="{{ route('admin.users.create')}}">Ajouter un membre</a></li>
+									<li><a href="{{ route('admin.profil.create')}}">Ajouter une Université</a></li>
+									<li><a href="form-wizard.html">Exporter</a></li>
+								</ul>
+							</li>
 						</ul>
 					</li>
 

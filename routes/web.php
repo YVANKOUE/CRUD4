@@ -20,12 +20,19 @@ Route::get('/', function () {
 });
 
 Auth::routes();
-
 Route::get('/home', 'HomeController@index')->name('home');
+
 Route::namespace('Admin')->prefix('admin')->name('admin.')->middleware('can:management-users')->group(function(){
 Route::resource('users' , 'UsersController');
 });
+
 Route::get('/home', 'HomeController@index')->name('home');
 Route::prefix('admin')->middleware('can:management-users')->group(function(){
     Route::resource('/admin/home', 'HomeadminController');
+});
+Route::namespace('Admin')->prefix('admin')->name('admin.')->middleware('can:management-users')->group(function(){
+    Route::resource('profil' , 'ProfilController');
+});
+Route::middleware('can:management-users')->group(function(){
+    Route::resource('school' , 'SchoolController');
 });

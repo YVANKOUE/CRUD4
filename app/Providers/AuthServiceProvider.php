@@ -28,8 +28,14 @@ class AuthServiceProvider extends ServiceProvider
         Gate::define('edit-users', function ($user) {
             return $user->hasAnyRole(['admin' , 'Superviseur']);
         }); 
+        Gate::define('edit-profil', function ($user) {
+            return $user->hasAnyRole(['Superviseur']);
+        }); 
         Gate::define('delete-users', function ($user) {
             return $user->isAdmin();
+        }); 
+        Gate::define('delete-school', function ($user) {
+            return $user->hasAnyRole(['admin' , 'Superviseur']);
         }); 
         Gate::define('management-users', function ($user) {
             return $user->hasAnyRole(['admin' , 'Superviseur']);//on va donc utilisé ce gate dans note route, c'est ici qu'on decide qui aura accé a notre page admin

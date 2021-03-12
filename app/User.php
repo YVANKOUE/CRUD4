@@ -2,9 +2,11 @@
 
 namespace App;
 
+use App\Role;
+use App\Student;
+use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Notifications\Notifiable;
 
 class User extends Authenticatable
 {
@@ -16,7 +18,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password', 'avatars'
     ];
 
     /**
@@ -37,7 +39,7 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
     public function roles(){
-        return $this->belongsToMany('App\Role');
+        return $this->belongsToMany(Role::class);
     }
     public function Categorie(){
         return $this->belongsToMany('App\Categorie', 'categorie_user', 'user_id', 'categorie_id');
@@ -49,5 +51,8 @@ class User extends Authenticatable
     }
     public function hasAnyRole(array $roles){
            return $this->roles()->whereIn('name', $roles)->first(); //whereIn parceque on veut recupéré un tableau avec tous les roles
+    }
+    public function student(){
+        return $this->hasOne(Student::class);
     }
 }

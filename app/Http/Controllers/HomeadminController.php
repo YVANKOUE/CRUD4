@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Role;
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 class HomeadminController extends Controller
@@ -26,6 +27,7 @@ class HomeadminController extends Controller
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'avatars' => ['string', 'max:255'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
     }
@@ -36,16 +38,25 @@ class HomeadminController extends Controller
      */
     public function create(Request $request)
     {
+        $avatar = $request->file('avatars');
+        if($avatar == ""){
+           $avatar = "Profil.png";
+        }else{
+            $avatar->getClientOriginalName(); 
+            // $destinationPath =  public_path().'/vendors/images/';
+            // $request->avatars->move( $destinationPath, $avatarName);
+            $avatar->store('avatar');
+        }
         $user =  User::create([
             'name' => $request['name'],
             'email' => $request['email'],
+            'avatars' => $avatar,
             'password' => Hash::make($request['password']),
         ]);
             // Assign a  role for new user
         $role = Role::select('id')->where('name', $request->role)->first();
         $user->roles()->attach($role);     
-        return redirect()->route('admin.users.index')->with('success', 'Le nouveau membre a été ajouté avec succès!');
-        
+        return redirect()->route('admin.users.index')->with('status', 'Utilisateur a était ajouté avec success!');
     }
 
     /**
@@ -90,8 +101,8 @@ class HomeadminController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
-    }
+    // 
+}
 
     /**
      * Remove the specified resource from storage.
