@@ -10,6 +10,7 @@
                     {{ session('status') }}
                 </div>
             @endif
+            @include('admin.app.nav')
             <!-- DataTales Example -->
             <div class="row">
                 <div class="card shadow mb-4 col-md-12">
@@ -50,7 +51,7 @@
                                                 <td>{{ $school->name }}</td>
                                                 <td>{{ implode(', ', $school->city()->get()->pluck('name')->toArray()) }}</td>
                                                 <td>{{ $school->localisation }}</td>
-                                                <td>{{ $school->Devenir }}</td>
+                                                <td>{{ $school->devenir }}</td>
                                                 <td class="text-center">
                                                     <a href="{{ route('school.show', $school->id)}}"><button class="btn btn-warning" title="Consulter" ><i class="fa fa-eye" aria-hidden="true"></i></button></a>
                                                     <span id="idElement">&nbsp;</span>

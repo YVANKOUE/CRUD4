@@ -30,6 +30,8 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{{asset('vendors/css/core.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('vendors/css/style.css')}}">
+    
+  
     <!-- <script>
       function Affiche(txt, idElement){
         var elmt = document.getElementById(idElement);
@@ -114,8 +116,8 @@ body{
 }
 .profile-edit-btn{
     border: none;
-    border-radius: 0.75rem;
-    width: 80%;
+    border-radius: 0.65rem;
+    width: 90%;
     padding: 2%;
     font-weight: 600;
     color: #6c757d;
@@ -220,7 +222,7 @@ body{
   	<script src="{{asset('vendors/js/dashboard.js')}}"></script>
 	<script src="{{asset('vendors/js/jquery-1.12.4.min.js')}}"></script>
     <script src="{{asset('vendors/js/bootstrap-table.js')}}"></script>
-	<script src="{{asset('vendors/js/bootstrap.min.js')}}"></script> 
+	<script src="{{asset('vendors/js/bootstrap.min.js')}}"></script>
   <script>
 document.querySelector("html").classList.add('js');
 

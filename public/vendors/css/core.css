@@ -11618,3 +11618,11 @@ Orginal Style from ethanschoonover.com/solarized (c) Jeremy Hull <sourdrums@gmai
   margin-bottom: 0;
   width: 100%;
   float: none; }
+  /* modal filiéres*/
+.modal-content
+{
+	background: rgba(255, 255, 255, .7);	
+}
+
+
+

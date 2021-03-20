@@ -3,33 +3,32 @@
 @section('title') | Profil @endsection
 
 @section('content')
-
 <div class="main-container">
 	<div class="pd-ltr-20 xs-pd-20-10">
-	
 <!------ Include the above in your HEAD tag ---------->
 
 <div class="container emp-profile">
-            <form method="post" action="{{route('admin.profil.update',auth()->user()->id )}}" >
+            @include('admin.app.nav')
+            <form method="post" action="{{route('profil.profil.show', $user->id)}}" >
                     @csrf
                     @method('GET')
                     <div class="row">
                         <div class="col-md-4">
                             <div class="profile-img">
-                                <img style="width: 232px; height: 195px;" src="{{asset('vendors/images/'.auth()->user()->avatars)}}" alt=""/>
-                                <div class="file btn btn-lg btn-primary">
+                                <img style="width: 232px; height: 195px;" src="{{asset('vendors/images/'.$user->avatars)}}"  alt=""/>
+                                <div class="file btn btn-lg btn-primary" style="width: 232px;">
                                     Changer la Photo
-                                    <input type="file" name="avatar"/>
+                                    <input type="file" name="avatar"  />
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="profile-head">
-                                        <h4>{{auth()->user()->name}}</h4>
+                                        <h4>{{$user->name}}</h4>
                                         <h6>
                                             Web Developer and Designer
                                         </h6><br>
-                                        <a class="btn btn-info" id="modifier" href="{{ route('admin.profil.edit', auth()->user()->id)}}" >Modifier ces infomations</a><br><br>
+                                        <a class="btn btn-info" id="modifier" href="{{ route('profil.profil.edit', auth()->user()->id)}}" >Modifier ces infomations</a><br><br>
                                 <ul class="nav nav-tabs" id="myTab" role="tablist">
                                     <li class="nav-item">
                                         <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">About</a>
@@ -76,7 +75,7 @@
                                                 <label>Name</label>
                                             </div>
                                             <div class="col-md-6">
-                                                <p>{{auth()->user()->name}}</p>
+                                                <p>{{$user->name}}</p>
                                             </div>
                                         </div>
                                         <div class="row">
@@ -84,7 +83,7 @@
                                                 <label>Email</label>
                                             </div>
                                             <div class="col-md-6">
-                                                <p>{{auth()->user()->email}}</p>
+                                                <p>{{$user->email}}</p>
                                             </div>
                                         </div>
                                         <div class="row">

@@ -52,6 +52,13 @@
                                 </li>
                             @endif
                             @else
+                            <li>
+                                <a class="image">
+                                    <span>
+                                        <img style="height: 50px; width:52px;border-radius:25px;  " src="{{asset('vendors/images/'.auth()->user()->avatars)}}" alt="">
+                                    </span>
+                                </a>
+                            </li>
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}
@@ -67,6 +74,9 @@
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                         @csrf
                                     </form>
+                                    @can('profil-utilisateur')
+                                        <a href="" class="dropdown-item">Profil</a>
+                                    @endcan
                                     @can('management-users')
                                     <a href="{{route('home.index')}}" class="dropdown-item">Gestion des utilisateurs</a>
                                     @endcan

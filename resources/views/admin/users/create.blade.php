@@ -8,6 +8,7 @@
 	<div class="pd-ltr-20">
 		<div class="row fielset formavlidation-wrapper m-auto justify-content-center">
             <div class="col-md-10">
+            @include('admin.app.nav')
                 <div class="card card-statistics">
                     <div class="card-header">
                         <div class="card-heading" >

@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\admin;
+namespace App\Http\Controllers\user;
 
+use App\Role;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
-use App\Role;
 
 class ProfilController extends Controller
 {
@@ -17,7 +17,6 @@ class ProfilController extends Controller
      */
     public function index()
     {
-
         return view('admin.profil');
     }
 
@@ -30,6 +29,7 @@ class ProfilController extends Controller
     {
         return view('admin.universités.create');
     }
+
     /**
      * Store a newly created resource in storage.
      *
@@ -40,17 +40,23 @@ class ProfilController extends Controller
     {
         //
     }
-
     /**
      * Display the specified resource.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Request $request , $id)
+    public function show(Request $request,$id)
     {
-        $user =  DB::table('users')->where('id', $id)->first();
-        return view('admin.profil')->with('user',$user);
+        $avatar = $request['avatar'];
+        if($avatar == ""){
+           $avatar = "Profil.png";
+        }else{
+            $avatar = $request['avatar'];
+        }
+        DB::table('users')->where('id', $id)->update(['avatars' => $avatar]);
+        $user = User::select( 'id','name' , 'avatars', 'email')->where('id' , $id)->first();
+        return view('admin.profil')->with('user',  $user);
     }
 
     /**
@@ -59,7 +65,7 @@ class ProfilController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(User $user , $id)
+    public function edit($id)
     {
         $freshuser = User::where('id', $id)->first();
         $user = $freshuser->fresh();
@@ -79,7 +85,7 @@ class ProfilController extends Controller
      */
     public function update(Request $request, $id)
     {
-   dd('Bonjour');
+        //
     }
 
     /**

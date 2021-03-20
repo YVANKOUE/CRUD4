@@ -125,7 +125,7 @@
 						<span class="user-name"> {{auth()->user()->name}}</span>
 					</a>
 					<div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
-						<a class="dropdown-item" href="{{route('admin.profil.show', auth()->user()->id)}}"><i class="dw dw-user1"></i> Profile</a>
+						<a class="dropdown-item" href="{{route('admin.users.show', auth()->user()->id)}}"><i class="dw dw-user1"></i> Profile</a>
 						<a class="dropdown-item" href="profile.html"><i class="dw dw-settings2"></i> Setting</a>
 						<a class="dropdown-item" href="faq.html"><i class="dw dw-help"></i> Help</a>
                         <form id="" action="{{ route('logout') }}" method="POST">
@@ -257,7 +257,7 @@
 								</a>
 								<ul class="submenu">
 									<li><a href="{{ route('admin.users.create')}}">Ajouter un membre</a></li>
-									<li><a href="{{ route('admin.profil.create')}}">Ajouter une Université</a></li>
+									<li><a href="{{ route('school.show',auth()->user()->id)}}">Ajouter une Université</a></li>
 									<li><a href="form-wizard.html">Exporter</a></li>
 								</ul>
 							</li>
@@ -265,8 +265,8 @@
 					</li>
 
 					<li>
-						<a href="sitemap.html" class="dropdown-toggle no-arrow">
-							<span class="micon dw dw-diagram"></span><span class="mtext">Sitemap</span>
+						<a href="" class="dropdown-toggle no-arrow">
+							<span class="micon dw dw-diagram"></span><span class="mtext">Calendar</span>
 						</a>
 					</li>
 					<li>

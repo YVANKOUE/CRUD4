@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\City;
+use App\faculty;
 use App\School;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Http\Request;
@@ -42,8 +43,9 @@ class SchoolController extends Controller
     }
     public function create(Request $request)
     {
+    $filiéres = $request->filiéres;
     $city = City::select('id')->where('name', $request->ville)->first();
-    School::create([
+    $school = School::create([
         'name' => $request['name'],
         'address' => $request['address'],
         'description' => $request['description'],
@@ -52,7 +54,11 @@ class SchoolController extends Controller
         'Devenir' => $request['Devenir'],
         'TypeUniversité' => $request['TypeUniversité'],
         'city_id' => $city->id,
-    ]);    
+    ]); 
+        foreach($filiéres as $filiére){
+            $newfiliére = faculty::select('id')->where('id', $filiére)->first();
+            $school->faculties()->attach($newfiliére);
+        }
     return redirect()->route('school.index')->with('status', 'Université a été ajouté avec success!');
     }
 
@@ -64,7 +70,7 @@ class SchoolController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // 
     }
 
     /**
@@ -75,7 +81,8 @@ class SchoolController extends Controller
      */
     public function show(School $school)
     {
-    dd('Bonjour cher tous');  
+        $filiéres = faculty::all();
+        return view('admin.universités.create')->with('filiéres',$filiéres);
     }
 
     /**

@@ -6,6 +6,7 @@
 <div class="mobile-menu-overlay"></div>
     <div class="main-container container">
         <div class="pd-ltr-20">
+        @include('admin.app.nav')
             <div class="row fielset formavlidation-wrapper m-auto justify-content-center">
             <div class="col-md-10">
                 <div class="card card-statistics">
@@ -41,14 +42,15 @@
                                     </span>
                                 @enderror
                             </div>
-                        </div>
-
-                        @foreach($roles as $role)
-                            <div class="formm-group form-check">
-                                <input type="checkbox" name="roles[]" value="{{$role->id}}" id="{{$role->id}}" class="form-check-input" @foreach($user->roles as $userRole) @if($userRole->id === $role->id) checked @endif @endforeach>
-                                <label for="{{$role->id}}" class="form-check-label">{{$role->name}}</label>
-                            </div>
-                        @endforeach
+                        </div> 
+                         @can('delete-users')
+                            @foreach($roles as $role)
+                                <div class="formm-group form-check">
+                                    <input type="checkbox" name="roles[]" value="{{$role->id}}" id="{{$role->id}}" class="form-check-input" @foreach($user->roles as $userRole) @if($userRole->id === $role->id) checked @endif @endforeach>
+                                    <label for="{{$role->id}}" class="form-check-label">{{$role->name}}</label>
+                                </div>
+                            @endforeach
+                        @endcan
                         <br>
                         <div class="text-center">
                             <button type="submit" class="btn btn-info font-weight-bolder">Modifier</button>

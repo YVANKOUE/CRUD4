@@ -11,6 +11,7 @@
                 </div>
             @endif
             <!-- DataTales Example -->
+            @include('admin.app.nav')
             <div class="row">
                 <div class="card shadow mb-4 col-md-12">
                         <div class="row card-header py-3">
@@ -45,7 +46,7 @@
                                             <td>{{ $user->email }}</td>
                                             <td>{{ implode(', ', $user->roles()->get()->pluck('name')->toArray()) }}</td>
                                             <td class="text-center">
-                                            <a href="{{ route('admin.profil.show', $user->id)}}"><button class="btn btn-warning" title="Consulter" ><i class="fa fa-eye" aria-hidden="true"></i></button></a>
+                                            <a href="{{ route('admin.users.show', $user->id)}}"><button class="btn btn-warning" title="Consulter" ><i class="fa fa-eye" aria-hidden="true"></i></button></a>
                                             <span id="idElement">&nbsp;</span>
                                             @can('edit-users')
                                                 <a href="{{ route('admin.users.edit', $user->id)}}" title="Modifier"><button class="btn btn-success" ><i class="fa fa-pencil" aria-hidden="true"></i></button></a>

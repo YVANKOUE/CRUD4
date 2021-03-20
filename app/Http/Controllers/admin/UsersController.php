@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers\admin;
 
-use App\Http\Controllers\Controller;
 use App\Role;
 use App\User;
-use Illuminate\Support\Facades\Gate;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Hash;
 
 class UsersController extends Controller
@@ -44,18 +45,20 @@ class UsersController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        return view('admin.Calendar');
     }
 
     /**
      * Display the specified resource.
      *
+     * 
      * @param  \App\User  $user
      * @return \Illuminate\Http\Response
      */
     public function show(User $user)
     {
-        //
+        $user =  DB::table('users')->where('id', $user->id)->first();
+        return view('admin.profil')->with('user',$user);
     }
 
     /**

@@ -67,7 +67,7 @@ class HomeadminController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // 
     }
 
     /**
@@ -78,7 +78,7 @@ class HomeadminController extends Controller
      */
     public function show($id)
     {
-        //
+    //    
     }
 
     /**

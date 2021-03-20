@@ -22,7 +22,7 @@
 	<link rel="stylesheet" type="text/css" href="{{asset('vendors/css/icon-font.min.css')}}">
 	<link rel="stylesheet" type="text/css" href="{{asset('src/vendors/css/dataTables.bootstrap4.min.css')}}">
 	<link rel="stylesheet" type="text/css" href="{{asset('src/plugins/datatables/css/responsive.bootstrap4.min.css')}}">
-	 
+	<link rel="stylesheet" type="text/css" href="{{asset('vendors/css/msfmultiselect.css')}}"/>
     <!-- Custom styles for this template -->
 
     <!-- Fonts -->
@@ -125,6 +125,7 @@ a:hover{
 	<script src="{{asset('vendors/js/jquery-1.12.4.min.js')}}"></script>
     <script src="{{asset('vendors/js/bootstrap-table.js')}}"></script>
 	<script src="{{asset('vendors/js/bootstrap.min.js')}}"></script> 
+	<script src="{{asset('vendors/js/msfmultiselect.js')}}"></script>
   <script>
 document.querySelector("html").classList.add('js');
 
@@ -150,6 +151,42 @@ button.addEventListener( "click", function( event ) {
 fileInput.addEventListener( "change", function( event ) {
 	the_return.innerHTML = this.value;
 });
-
+var select = new MSFmultiSelect(
+  document.querySelector('#multiselect'),
+  {
+    theme: 'theme1',
+    selectAll: true,
+    searchBox: true,
+    width: 250,
+    height: 30,
+    onChange:function(checked, value, instance) {
+      //console.log(checked, value, instance);
+    },
+    //appendTo: '#myselect',
+    //readOnly:true,
+    placeholder: 'Selectionner les filiéres',
+    //autoHide: false,
+    afterSelectAll:function(checked, values, instance) {
+      //console.log(checked, values, instance);
+    }
+  }
+);
+var select2 = new MSFmultiSelect(
+  document.querySelector('#multiselect2'),
+  {
+    theme: 'theme2',
+    selectAll: true,
+    searchBox: true,
+    width: '250px',
+    height: '45px',
+    // readOnly: true,
+    onChange:function(checked, value, instance) {
+      // console.log(checked, value, instance);
+    },
+    //appendTo: '#myselect2',
+    //readOnly:true,
+    //autoHide: false
+  }
+);
   </script>
 </html>
