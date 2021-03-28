@@ -17,9 +17,11 @@ class HomeadminController extends Controller
      */
     public function index()
     {
+        $nbr = DB::table('users')->count();
         $users = User::all();
         return view('admin.home', [
-            'users' => $users
+            'users' => $users,
+            'nbr' => $nbr
         ]);
     }
     protected function validator(array $data)
@@ -42,20 +44,21 @@ class HomeadminController extends Controller
         if($avatar == ""){
            $avatar = "Profil.png";
         }else{
-            $avatar->getClientOriginalName(); 
-            // $destinationPath =  public_path().'/vendors/images/';
-            // $request->avatars->move( $destinationPath, $avatarName);
-            $avatar->store('avatar');
+            $avatarName = $avatar->getClientOriginalName(); 
+            
+            $destinationPath =  public_path().'/vendors/images/';
+            $request->avatars->move( $destinationPath, $avatarName);
+            // $avatar->store('avatar');
         }
         $user =  User::create([
             'name' => $request['name'],
             'email' => $request['email'],
-            'avatars' => $avatar,
+            'avatars' => $avatarName,
             'password' => Hash::make($request['password']),
         ]);
             // Assign a  role for new user
         $role = Role::select('id')->where('name', $request->role)->first();
-        $user->roles()->attach($role);     
+        $user->roles()->attach($role);  
         return redirect()->route('admin.users.index')->with('status', 'Utilisateur a était ajouté avec success!');
     }
 

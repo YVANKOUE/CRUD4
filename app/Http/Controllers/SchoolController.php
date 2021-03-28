@@ -93,8 +93,10 @@ class SchoolController extends Controller
      */
     public function edit(School $school)
     { 
+        $filiéres = faculty::all();
         return view('admin.universités.edit',[
         'school' => $school ,
+        'filiéres' => $filiéres,
         ]);
     }
 

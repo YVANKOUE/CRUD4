@@ -44,13 +44,21 @@
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST">
+                                    @csrf
+                                    <button type="submit" class="btn btn" ><a class="nav-link">{{ __('home') }}</a></button>
+                                </form>
+                            </li>
+                            @if (!Route::has('register'))
+                            <li class="nav-item">
                                 <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                             </li>
-                            @if (Route::has('register'))
+                            @endif
+                            <!-- @if (Route::has('register'))
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
                                 </li>
-                            @endif
+                            @endif -->
                             @else
                             <li>
                                 <a class="image">

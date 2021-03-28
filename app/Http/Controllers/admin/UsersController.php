@@ -57,9 +57,10 @@ class UsersController extends Controller
      */
     public function show(User $user)
     {
-        $user =  DB::table('users')->where('id', $user->id)->first();
-        return view('admin.profil')->with('user',$user);
-    }
+       $user = User::where('id', $user->id)->first();
+        return view('admin.profil')->with([
+            'user'=> $user,
+       ] );}
 
     /**
      * Show the form for editing the specified resource.
@@ -88,6 +89,7 @@ class UsersController extends Controller
         $user->roles()->sync($request->roles);
         $user->name = $request->name;
         $user->email = $request->email;
+        $user->avatars = $request->avatars;
         $user->save();
         return redirect()->route('admin.users.index')->with('status', 'profil modifier !');
     }

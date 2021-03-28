@@ -39,7 +39,7 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
     public function roles(){
-        return $this->belongsToMany(Role::class);
+        return $this->belongsToMany('App\Role', 'role_user', 'user_id', 'role_id');
     }
     public function Categorie(){
         return $this->belongsToMany('App\Categorie', 'categorie_user', 'user_id', 'categorie_id');

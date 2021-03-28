@@ -1,165 +1,122 @@
-@extends('admin.app.appProfil')
+@extends('admin.app.app')
 
 @section('title') | Profil @endsection
 
 @section('content')
-<div class="main-container">
-	<div class="pd-ltr-20 xs-pd-20-10">
-<!------ Include the above in your HEAD tag ---------->
-
-<div class="container emp-profile">
-            @include('admin.app.nav')
-            <form method="post" action="{{route('profil.profil.show', $user->id)}}" >
-                    @csrf
-                    @method('GET')
+<!-- BEGIN: Content-->
+<div class="app-content content">
+        <div class="content-overlay"></div>
+        <div class="header-navbar-shadow"></div>
+        <div class="content-wrapper">
+            <div class="content-header row">
+            </div>
+            <div class="content-body">
+                <!-- page users view start -->
+                <section class="page-users-view">
                     <div class="row">
-                        <div class="col-md-4">
-                            <div class="profile-img">
-                                <img style="width: 232px; height: 195px;" src="{{asset('vendors/images/'.$user->avatars)}}"  alt=""/>
-                                <div class="file btn btn-lg btn-primary" style="width: 232px;">
-                                    Changer la Photo
-                                    <input type="file" name="avatar"  />
+                        <!-- account start -->
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <div class="card-title">Modifier Informations</div>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="profile-head">
-                                        <h4>{{$user->name}}</h4>
-                                        <h6>
-                                            Web Developer and Designer
-                                        </h6><br>
-                                        <a class="btn btn-info" id="modifier" href="{{ route('profil.profil.edit', auth()->user()->id)}}" >Modifier ces infomations</a><br><br>
-                                <ul class="nav nav-tabs" id="myTab" role="tablist">
-                                    <li class="nav-item">
-                                        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">About</a>
-                                    </li>
-                                    @can('edit-users')
-                                        <li class="nav-item">
-                                            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Timeline</a>
-                                        </li>
-                                    @endcan
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-md-2">
-                            <input  type="submit" class="profile-edit-btn btn btn-danger text-light" name="btnAddMore" value="Modifier Profil"/>
-                        </div>
-                    </div>       
-                <div class="row">
-                        <div class="col-md-4">
-                            <div class="profile-work">
-                                <p>WORK LINK</p>
-                                <a href="">Website Link</a><br/>
-                                <a href="">Bootsnipp Profile</a><br/>
-                                <a href="">Bootply Profile</a>
-                                @can('delete-users')
-                                    <p>SKILLS</p>
-                                    <a href="">Web Designer</a><br/>
-                                    <a href="">Web Developer</a><br/>
-                                    <a href="">WordPress</a><br/>
-                                    <a href="">WooCommerce</a><br/>
-                                 @endcan  
-                                 @can('edit-profil')
-                                    <p>SKILLS</p>
-                                    <a href="">Web Developer</a><br/>
-                                    <a href="">Html Css3</a><br/>
-                                    <a href="">Bootstrap4</a><br/>
-                                 @endcan    
-                            </div>
-                        </div>
-                    <div class="col-md-8">
-                        <div class="tab-content profile-tab" id="myTabContent">
-                            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <label>Name</label>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <p>{{$user->name}}</p>
-                                            </div>
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="users-view-image">
+                                            <img src="{{asset('vendors/images/'.$user->avatars)}}" class="users-avatar-shadow w-100 rounded mb-2 pr-2 ml-1" alt="avatar">
                                         </div>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <label>Email</label>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <p>{{$user->email}}</p>
-                                            </div>
+                                        <div class="col-12 col-sm-9 col-md-6 col-lg-5">
+                                            <table>
+                                                <tr>
+                                                    <td class="font-weight-bold">Name</td>
+                                                    <td>{{$user->name}}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="font-weight-bold">Email</td>
+                                                    <td>{{$user->email}}</td>
+                                                </tr>
+                                            </table>
                                         </div>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <label>Phone</label>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <p>123 456 7890</p>
-                                            </div>
+                                        <div class="col-12 col-md-12 col-lg-5">
+                                            <table class="ml-0 ml-sm-0 ml-lg-0">
+                                                <tr>
+                                                    <td class="font-weight-bold">Status</td>
+                                                    <td>active</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="font-weight-bold">Role</td>
+                                                       @foreach($user->roles as $role)
+                                                           <td>{{$role->name}}</td>
+                                                       @endforeach
+                                                </tr>
+                                                <tr>
+                                                    <td class="font-weight-bold">Company</td>
+                                                    <td>WinDon Technologies Pvt Ltd</td>
+                                                </tr>
+                                            </table>
                                         </div>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <label>Profession</label>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <p>Web Developer and Designer</p>
-                                            </div>
+                                        <div class="col-12">
+                                            <a href="{{ route('admin.users.edit', $user->id)}}"><button  class="btn btn-primary mr-1"><i class="feather icon-edit-1"></i> Edit</button></a>
                                         </div>
-                            </div>
-                            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <label>Experience</label>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <p>Expert</p>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <label>Hourly Rate</label>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <p>10$/hr</p>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <label>Total Projects</label>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <p>230</p>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <label>English Level</label>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <p>Expert</p>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <label>Availability</label>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <p>6 months</p>
-                                            </div>
-                                        </div>
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <label>Your Bio</label><br/>
-                                        <p>Your detail description</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        <!-- account end -->
+                        <!-- information start -->
+                        <div class="col-md-6 col-12 ">
+                            <div class="card">
+                                <div class="card-header">
+                                    <div class="card-title mb-2">Information</div>
+                                </div>
+                                <div class="card-body">
+                                    <table>
+                                        <tr>
+                                            <td class="font-weight-bold">Mobile</td>
+                                            <td>+65958951757</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="font-weight-bold">Website</td>
+                                            <td>https://rowboat.com/insititious/Angelo
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- information start -->
+                        <!-- social links end -->
+                        <div class="col-md-6 col-12 ">
+                            <div class="card">
+                                <div class="card-header">
+                                    <div class="card-title mb-2">Social Links</div>
+                                </div>
+                                <div class="card-body">
+                                    <table>
+                                        <tr>
+                                            <td class="font-weight-bold">Twitter</td>
+                                            <td>https://twitter.com/adoptionism744
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="font-weight-bold">Facebook</td>
+                                            <td>https://www.facebook.com/adoptionism664
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- social links end -->
                     </div>
-                </div>
-            </form>           
-        </div>
-	</div>
-</div>
+                </section>
+                <!-- page users view end -->
 
-<div class="footer-wrap pd-20 mb-20 card-box">
-	Orientation.Key <a href="https://github.com/dropways" target="_blank">Orientatin.key.Solution</a>
-</div>
+            </div>
+        </div>
+    </div>
+    <!-- END: Content-->
+    <div class="sidenav-overlay"></div>
+    <div class="drag-target"></div>
+<!-- @include('admin.include.footer') -->
 @endsection
