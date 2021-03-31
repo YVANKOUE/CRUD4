@@ -3,13 +3,11 @@
 namespace App\Http\Controllers\password;
 
 use App\User;
-use App\faculty;
 use Illuminate\Http\Request;
-use App\Mail\reset_passwordMail;
+use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Mail;
 
-class PasswordController extends Controller
+class ResetController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,8 +16,7 @@ class PasswordController extends Controller
      */
     public function index()
     {
-        $filiéres = faculty::all();
-        return view('admin.universités.create')->with('filiéres',$filiéres);
+        // 
     }
 
     /**
@@ -28,8 +25,13 @@ class PasswordController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {  
-        return view('auth.passwords.reset');
+    {
+        $nbF = DB::table('faculties')->count();
+        $nbE = DB::table('schools')->count();
+        return view('admin.home2')->with([
+            'nbF' => $nbF,
+            'nbE' => $nbE
+        ]);
     }
 
     /**
@@ -40,16 +42,16 @@ class PasswordController extends Controller
      */
     public function store(Request $request)
     { 
+       
         $user = User::where('email', $request->email)->first();
-        if($user->email = ""){           
-            return view('auth.passwords.email')->with('status' , 'email'.$user.'ne correspond pas a nos enregistrement');
+        if($user->email = ""){
+            
+            return view('auth.passwords.reset')->with('status' , 'email'.$user.'ne correspond pas a nos enregistrement');
         }else{
-            Mail::to($request->email)->send(new reset_passwordMail());
-            return view('auth.passwords.reset')->with(
-                'status' , 'Le mail a été envoyé avec success');
+            $user->email = $user->email;
+            return view('home');
         }
-        }
-
+    }
 
     /**
      * Display the specified resource.

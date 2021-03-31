@@ -1,7 +1,7 @@
 @component('mail::message')
-# Introduction
+#  Cliquez sur le lien si dessous et suivez les instructions pour changer votre MDP
 
-The body of your message.
+<a href="http://127.0.0.1:8000/password/create">text</a>
 
 @component('mail::button', ['url' => ''])
 Button Text

@@ -81,8 +81,7 @@ class SchoolController extends Controller
      */
     public function show(School $school)
     {
-        $filiéres = faculty::all();
-        return view('admin.universités.create')->with('filiéres',$filiéres);
+    //   
     }
 
     /**

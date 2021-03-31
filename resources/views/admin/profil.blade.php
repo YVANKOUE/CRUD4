@@ -14,6 +14,11 @@
                 <!-- page users view start -->
                 <section class="page-users-view">
                     <div class="row">
+                        @if (session('status'))
+                            <div class="alert alert-success">
+                                {{ session('status') }}
+                            </div>
+                        @endif
                         <!-- account start -->
                         <div class="col-12">
                             <div class="card">

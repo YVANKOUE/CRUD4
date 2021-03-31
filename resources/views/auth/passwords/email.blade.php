@@ -4,7 +4,7 @@
 <div class="login-wrap d-flex align-items-center flex-wrap justify-content-center">
 		<div class="container">
 			<div class="row align-items-center">
-				<div class="col-md-5 col-sm-6 col-xs-6 col-lg-6">
+				<div class="col-md-4 col-sm-5 col-xs-5 col-lg-5">
 					<img src="{{asset('vendors/images/forgot-password.png')}}" alt="">
 				</div>
             <div class="card col-md-6 col-sm-5 col-xs-5 col-lg-6">

@@ -10,9 +10,6 @@
                             <!-- li.nav-item.mobile-menu.d-xl-none.mr-auto-->
                             <!--   a.nav-link.nav-menu-main.menu-toggle.hidden-xs(href='#')-->
                             <!--     i.ficon.feather.icon-menu-->
-                            <li class="nav-item d-none d-lg-block"><a class="nav-link" href="app-todo.html" data-toggle="tooltip" data-placement="top" title="Todo"><i class="ficon feather icon-check-square"></i></a></li>
-                            <li class="nav-item d-none d-lg-block"><a class="nav-link" href="app-chat.html" data-toggle="tooltip" data-placement="top" title="Chat"><i class="ficon feather icon-message-square"></i></a></li>
-                            <li class="nav-item d-none d-lg-block"><a class="nav-link" href="app-email.html" data-toggle="tooltip" data-placement="top" title="Email"><i class="ficon feather icon-mail"></i></a></li>
                             <li class="nav-item d-none d-lg-block"><a class="nav-link" href="/calendar" data-toggle="tooltip" data-placement="top" title="Calendar"><i class="ficon feather icon-calendar"></i></a></li>
                         </ul>
                         <ul class="nav navbar-nav">
@@ -42,57 +39,6 @@
                                 <div class="search-input-close"><i class="feather icon-x"></i></div>
                                 <ul class="search-list search-list-main"></ul>
                             </div>
-                        </li>
-                        <li class="dropdown dropdown-notification nav-item"><a class="nav-link nav-link-label" href="#" data-toggle="dropdown"><i class="ficon feather icon-bell"></i><span class="badge badge-pill badge-primary badge-up">5</span></a>
-                            <ul class="dropdown-menu dropdown-menu-media dropdown-menu-right">
-                                <li class="dropdown-menu-header">
-                                    <div class="dropdown-header m-0 p-2">
-                                        <h3 class="white">5 New</h3><span class="notification-title">App Notifications</span>
-                                    </div>
-                                </li>
-                                <li class="scrollable-container media-list"><a class="d-flex justify-content-between" href="javascript:void(0)">
-                                        <div class="media d-flex align-items-start">
-                                            <div class="media-left"><i class="feather icon-plus-square font-medium-5 primary"></i></div>
-                                            <div class="media-body">
-                                                <h6 class="primary media-heading">You have new order!</h6><small class="notification-text"> Are your going to meet me tonight?</small>
-                                            </div><small>
-                                                <time class="media-meta" datetime="2015-06-11T18:29:20+08:00">9 hours ago</time></small>
-                                        </div>
-                                    </a><a class="d-flex justify-content-between" href="javascript:void(0)">
-                                        <div class="media d-flex align-items-start">
-                                            <div class="media-left"><i class="feather icon-download-cloud font-medium-5 success"></i></div>
-                                            <div class="media-body">
-                                                <h6 class="success media-heading red darken-1">99% Server load</h6><small class="notification-text">You got new order of goods.</small>
-                                            </div><small>
-                                                <time class="media-meta" datetime="2015-06-11T18:29:20+08:00">5 hour ago</time></small>
-                                        </div>
-                                    </a><a class="d-flex justify-content-between" href="javascript:void(0)">
-                                        <div class="media d-flex align-items-start">
-                                            <div class="media-left"><i class="feather icon-alert-triangle font-medium-5 danger"></i></div>
-                                            <div class="media-body">
-                                                <h6 class="danger media-heading yellow darken-3">Warning notifixation</h6><small class="notification-text">Server have 99% CPU usage.</small>
-                                            </div><small>
-                                                <time class="media-meta" datetime="2015-06-11T18:29:20+08:00">Today</time></small>
-                                        </div>
-                                    </a><a class="d-flex justify-content-between" href="javascript:void(0)">
-                                        <div class="media d-flex align-items-start">
-                                            <div class="media-left"><i class="feather icon-check-circle font-medium-5 info"></i></div>
-                                            <div class="media-body">
-                                                <h6 class="info media-heading">Complete the task</h6><small class="notification-text">Cake sesame snaps cupcake</small>
-                                            </div><small>
-                                                <time class="media-meta" datetime="2015-06-11T18:29:20+08:00">Last week</time></small>
-                                        </div>
-                                    </a><a class="d-flex justify-content-between" href="javascript:void(0)">
-                                        <div class="media d-flex align-items-start">
-                                            <div class="media-left"><i class="feather icon-file font-medium-5 warning"></i></div>
-                                            <div class="media-body">
-                                                <h6 class="warning media-heading">Generate monthly report</h6><small class="notification-text">Chocolate cake oat cake tiramisu marzipan</small>
-                                            </div><small>
-                                                <time class="media-meta" datetime="2015-06-11T18:29:20+08:00">Last month</time></small>
-                                        </div>
-                                    </a></li>
-                                <li class="dropdown-menu-footer"><a class="dropdown-item p-1 text-center" href="javascript:void(0)">Read all notifications</a></li>
-                            </ul>
                         </li>
                         <li class="dropdown dropdown-user nav-item"><a class="dropdown-toggle nav-link dropdown-user-link" href="#" data-toggle="dropdown">
                                 <div class="user-nav d-sm-flex d-none"><span class="user-name text-bold-600">{{auth()->user()->name}}</span><span class="user-status">Available</span></div><span><img class="round" src="{{asset('vendors/images/'.auth()->user()->avatars)}}" alt="avatar" height="40" width="40"></span>
@@ -192,8 +138,8 @@
         <div class="navbar-header">
             <ul class="nav navbar-nav flex-row">
                 <li class="nav-item mr-auto"><a class="navbar-brand" href="../../../html/ltr/vertical-menu-template/index.html">
-                        <div class="brand-logo"></div>
-                        <h2 class="brand-text mb-0">Vuexy</h2>
+                        <div style="height: 40px; width:40px;"  class="brand-logo"></div>
+                        <h2 class="brand-text mb-0" style="margin-left: -10px; margin-top:10px;" >Orientation</h2>
                     </a></li>
                 <li class="nav-item nav-toggle"><a class="nav-link modern-nav-toggle pr-0" data-toggle="collapse"><i class="feather icon-x d-block d-xl-none font-medium-4 primary toggle-icon"></i><i class="toggle-icon feather icon-disc font-medium-4 d-none d-xl-block collapse-toggle-icon primary" data-ticon="icon-disc"></i></a></li>
             </ul>
@@ -205,7 +151,7 @@
                     <ul class="menu-content">
                         <li class="active"><a href="{{route('home.index')}}"><i href="feather icon-circle"></i><span class="menu-item" data-i18n="Analytics">Analytics users</span></a>
                         </li>
-                        <li><a href="dashboard-ecommerce.html"><i class="feather icon-circle"></i><span class="menu-item" data-i18n="eCommerce">Analytics schools</span></a>
+                        <li><a href="{{route('reset.create')}}"><i class="feather icon-circle"></i><span class="menu-item" data-i18n="eCommerce">Analytics schools</span></a>
                         </li>
                     </ul>
                 </li>
@@ -217,7 +163,7 @@
                     <ul class="menu-content">
                         <li><a href="{{ route('school.index')}}"><i class="feather icon-circle"></i><span class="menu-item" data-i18n="Shop">List</span></a>
                         </li>
-                        <li><a href="{{route('school.show',auth()->user()->id)}}"><i class="feather icon-circle"></i><span class="menu-item" data-i18n="Details">Create</span></a>
+                        <li><a href="{{route('password.index')}}"><i class="feather icon-circle"></i><span class="menu-item" data-i18n="Details">Create</span></a>
                         </li>
                     </ul>
                 </li>
@@ -231,29 +177,9 @@
                 </li>
                 <li class=" navigation-header"><span>pages</span>
                 </li>
-                <li class=" nav-item"><a href="page-user-profile.html"><i class="feather icon-user"></i><span class="menu-title" data-i18n="Profile">Profile</span></a>
+                <li class=" nav-item"><a href="{{route('admin.users.show', auth()->user()->id)}}"><i class="feather icon-user"></i><span class="menu-title" data-i18n="Profile">Profile</span></a>
                 </li>
                 <li class=" nav-item"><a href="page-account-settings.html"><i class="feather icon-settings"></i><span class="menu-title" data-i18n="Account Settings">Account Settings</span></a>
-                </li>
-                <li class=" nav-item"><a href="page-faq.html"><i class="feather icon-help-circle"></i><span class="menu-title" data-i18n="FAQ">FAQ</span></a>
-                </li>
-                <li class=" nav-item"><a href="page-knowledge-base.html"><i class="feather icon-info"></i><span class="menu-title" data-i18n="Knowledge Base">Knowledge Base</span></a>
-                </li>
-                <li class=" nav-item"><a href="page-search.html"><i class="feather icon-search"></i><span class="menu-title" data-i18n="Search">Search</span></a>
-                </li>
-                <li class=" nav-item"><a href="page-invoice.html"><i class="feather icon-file"></i><span class="menu-title" data-i18n="Invoice">Invoice</span></a>
-                </li>
-                <li class=" nav-item"><a href="#"><i class="feather icon-zap"></i><span class="menu-title" data-i18n="Starter kit">Starter kit</span></a>
-                    <ul class="menu-content">
-                        <li><a href="../../../starter-kit/ltr/vertical-menu-template/sk-layout-2-columns.html"><i class="feather icon-circle"></i><span class="menu-item" data-i18n="2 columns">2 columns</span></a>
-                        </li>
-                        <li><a href="../../../starter-kit/ltr/vertical-menu-template/sk-layout-fixed-navbar.html"><i class="feather icon-circle"></i><span class="menu-item" data-i18n="Fixed navbar">Fixed navbar</span></a>
-                        </li>
-                        <li><a href="../../../starter-kit/ltr/vertical-menu-template/sk-layout-floating-navbar.html"><i class="feather icon-circle"></i><span class="menu-item" data-i18n="Floating navbar">Floating navbar</span></a>
-                        </li>
-                        <li><a href="../../../starter-kit/ltr/vertical-menu-template/sk-layout-fixed.html"><i class="feather icon-circle"></i><span class="menu-item" data-i18n="Fixed layout">Fixed layout</span></a>
-                        </li>
-                    </ul>
                 </li>
                 <li class=" nav-item"><a href="#"><i class="feather icon-unlock"></i><span class="menu-title" data-i18n="Authentication">Authentication</span></a>
                     <ul class="menu-content">
@@ -265,91 +191,12 @@
                         </li>
                         <li><a href="auth-reset-password.html"><i class="feather icon-circle"></i><span class="menu-item" data-i18n="Reset Password">Reset Password</span></a>
                         </li>
-                        <li><a href="auth-lock-screen.html"><i class="feather icon-circle"></i><span class="menu-item" data-i18n="Lock Screen">Lock Screen</span></a>
-                        </li>
                     </ul>
                 </li>
-                <li class=" nav-item"><a href="#"><i class="feather icon-file-text"></i><span class="menu-title" data-i18n="Miscellaneous">Miscellaneous</span></a>
-                    <ul class="menu-content">
-                        <li><a href="page-coming-soon.html"><i class="feather icon-circle"></i><span class="menu-item" data-i18n="Coming Soon">Coming Soon</span></a>
-                        </li>
-                        <li><a href="#"><i class="feather icon-circle"></i><span class="menu-item" data-i18n="Error">Error</span></a>
-                            <ul class="menu-content">
-                                <li><a href="error-404.html"><i class="feather icon-circle"></i><span class="menu-item" data-i18n="404">404</span></a>
-                                </li>
-                                <li><a href="error-500.html"><i class="feather icon-circle"></i><span class="menu-item" data-i18n="500">500</span></a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li><a href="page-not-authorized.html"><i class="feather icon-circle"></i><span class="menu-item" data-i18n="Not Authorized">Not Authorized</span></a>
-                        </li>
-                        <li><a href="page-maintenance.html"><i class="feather icon-circle"></i><span class="menu-item" data-i18n="Maintenance">Maintenance</span></a>
-                        </li>
-                    </ul>
-                </li>
-                <li class=" navigation-header"><span>Charts &amp; Maps</span>
-                </li>
-                <li class=" nav-item"><a href="#"><i class="feather icon-pie-chart"></i><span class="menu-title" data-i18n="Charts">Charts</span><span class="badge badge badge-pill badge-success float-right mr-2">3</span></a>
-                    <ul class="menu-content">
-                        <li><a href="chart-apex.html"><i class="feather icon-circle"></i><span class="menu-item" data-i18n="Apex">Apex</span></a>
-                        </li>
-                        <li><a href="chart-chartjs.html"><i class="feather icon-circle"></i><span class="menu-item" data-i18n="Chartjs">Chartjs</span></a>
-                        </li>
-                        <li><a href="chart-echarts.html"><i class="feather icon-circle"></i><span class="menu-item" data-i18n="Echarts">Echarts</span></a>
-                        </li>
-                    </ul>
-                </li>
-                <li class=" nav-item"><a href="maps-google.html"><i class="feather icon-map"></i><span class="menu-title" data-i18n="Google Maps">Google Maps</span></a>
-                </li>
-                <li class=" navigation-header"><span>Extensions</span>
-                </li>
-                <li class=" nav-item"><a href="ext-component-sweet-alerts.html"><i class="feather icon-alert-circle"></i><span class="menu-title" data-i18n="Sweet Alert">Sweet Alert</span></a>
-                </li>
-                <li class=" nav-item"><a href="ext-component-toastr.html"><i class="feather icon-zap"></i><span class="menu-title" data-i18n="Toastr">Toastr</span></a>
-                </li>
-                <li class=" nav-item"><a href="ext-component-noui-slider.html"><i class="feather icon-sliders"></i><span class="menu-title" data-i18n="NoUi Slider">NoUi Slider</span></a>
-                </li>
-                <li class=" nav-item"><a href="ext-component-file-uploader.html"><i class="feather icon-upload-cloud"></i><span class="menu-title" data-i18n="File Uploader">File Uploader</span></a>
-                </li>
-                <li class=" nav-item"><a href="ext-component-quill-editor.html"><i class="feather icon-edit"></i><span class="menu-title" data-i18n="Quill Editor">Quill Editor</span></a>
-                </li>
-                <li class=" nav-item"><a href="ext-component-drag-drop.html"><i class="feather icon-droplet"></i><span class="menu-title" data-i18n="Drag &amp; Drop">Drag &amp; Drop</span></a>
-                </li>
-                <li class=" nav-item"><a href="ext-component-tour.html"><i class="feather icon-info"></i><span class="menu-title" data-i18n="Tour">Tour</span></a>
-                </li>
-                <li class=" nav-item"><a href="ext-component-clipboard.html"><i class="feather icon-copy"></i><span class="menu-title" data-i18n="Clipboard">Clipboard</span></a>
-                </li>
-                <li class=" nav-item"><a href=" ext-component-plyr.html"><i class="feather icon-film"></i><span class="menu-title" data-i18n="Media player">Media player</span></a>
-                </li>
-                <li class=" nav-item"><a href="ext-component-context-menu.html"><i class="feather icon-more-horizontal"></i><span class="menu-title" data-i18n="Context Menu">Context Menu</span></a>
-                </li>
-                <li class=" nav-item"><a href="ext-component-swiper.html"><i class="feather icon-smartphone"></i><span class="menu-title" data-i18n="swiper">swiper</span></a>
-                </li>
-                <li class=" nav-item"><a href="ext-component-i18n.html"><i class="feather icon-globe"></i><span class="menu-title" data-i18n="l18n">l18n</span></a>
-                </li>
-                <li class=" navigation-header"><span>Others</span>
-                </li>
-                <li class=" nav-item"><a href="#"><i class="feather icon-menu"></i><span class="menu-title" data-i18n="Menu Levels">Menu Levels</span></a>
-                    <ul class="menu-content">
-                        <li><a href="#"><i class="feather icon-circle"></i><span class="menu-item" data-i18n="Second Level">Second Level</span></a>
-                        </li>
-                        <li><a href="#"><i class="feather icon-circle"></i><span class="menu-item" data-i18n="Second Level">Second Level</span></a>
-                            <ul class="menu-content">
-                                <li><a href="#"><i class="feather icon-circle"></i><span class="menu-item" data-i18n="Third Level">Third Level</span></a>
-                                </li>
-                                <li><a href="#"><i class="feather icon-circle"></i><span class="menu-item" data-i18n="Third Level">Third Level</span></a>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                </li>
-                <li class="disabled nav-item"><a href="#"><i class="feather icon-eye-off"></i><span class="menu-title" data-i18n="Disabled Menu">Disabled Menu</span></a>
-                </li>
+                
                 <li class=" navigation-header"><span>Support</span>
                 </li>
-                <li class=" nav-item"><a href="https://pixinvent.com/demo/vuexy-html-bootstrap-admin-template/documentation"><i class="feather icon-folder"></i><span class="menu-title" data-i18n="Documentation">Documentation</span></a>
-                </li>
-                <li class=" nav-item"><a href="https://pixinvent.ticksy.com/"><i class="feather icon-life-buoy"></i><span class="menu-title" data-i18n="Raise Support">Raise Support</span></a>
+                <li class=" nav-item"><a href="" ><i class="feather icon-folder"></i><span class="menu-title" data-i18n="Documentation">Documentation</span></a>
                 </li>
             </ul>
         </div>

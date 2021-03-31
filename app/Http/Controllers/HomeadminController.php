@@ -46,8 +46,9 @@ class HomeadminController extends Controller
         }else{
             $avatarName = $avatar->getClientOriginalName(); 
             
-            $destinationPath =  public_path().'/vendors/images/';
-            $request->avatars->move( $destinationPath, $avatarName);
+            // $destinationPath =  public_path().'/vendors/images/';
+            $request->avatars->storeAs('vendors/images', $avatarName, 'public');
+            
             // $avatar->store('avatar');
         }
         $user =  User::create([
@@ -60,6 +61,7 @@ class HomeadminController extends Controller
         $role = Role::select('id')->where('name', $request->role)->first();
         $user->roles()->attach($role);  
         return redirect()->route('admin.users.index')->with('status', 'Utilisateur a était ajouté avec success!');
+      
     }
 
     /**

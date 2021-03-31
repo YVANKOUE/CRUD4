@@ -65,7 +65,9 @@
     <link rel="stylesheet" type="text/css" href="{{asset('app-assets/css/pages/aggrid.css')}}">
     
 
-
+    <link rel="stylesheet" type="text/css" href="{{asset('app-assets/css/core/colors/palette-gradient.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('app-assets/css/pages/dashboard-ecommerce.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('app-assets/css/pages/card-analytics.css')}}">
 
 
 
@@ -297,8 +299,8 @@ a:hover{
 
     
     <!-- BEGIN: Page Vendor JS-->
-    <script src="{{asset('app-assets/vendors/js/tables/datatable/pdfmake.min.js')}}"></script>
-    <script src="{{asset('app-assets/vendors/js/tables/datatable/vfs_fonts.js')}}"></script>
+    {{-- <script src="{{asset('app-assets/vendors/js/tables/datatable/pdfmake.min.js')}}"></script>
+    <script src="{{asset('app-assets/vendors/js/tables/datatable/vfs_fonts.js')}}"></script> --}}
     <script src="{{asset('app-assets/vendors/js/tables/datatable/datatables.min.js')}}"></script>
     <script src="{{asset('app-assets/vendors/js/tables/datatable/datatables.buttons.min.js')}}"></script>
     <script src="{{asset('app-assets/vendors/js/tables/datatable/buttons.html5.min.js')}}"></script>
@@ -307,6 +309,28 @@ a:hover{
     <script src="{{asset('app-assets/vendors/js/tables/datatable/datatables.bootstrap4.min.js')}}"></script>
     <!-- END: Page Vendor JS-->
     <script src="{{asset('msfmultiselect.js')}}"></script>
+    
+
+
+
+
+
+
+    <script src="{{asset('app-assets/vendors/js/ui/jquery.sticky.js')}}"></script>
+    <script src="{{asset('app-assets/vendors/js/charts/apexcharts.min.js')}}"></script>
+  
+    <script src="{{asset('app-assets/js/scripts/pages/dashboard-ecommerce.js')}}"></script>
+    
+    <script src="{{asset('app-assets/js/scripts/datatables/datatable.js')}}"></script>
+ 
+
+
+
+
+
+
+
+
 
     <!-- BEGIN: Page JS-->
     <script src="{{asset('app-assets/js/scripts/datatables/datatable.js')}}"></script>

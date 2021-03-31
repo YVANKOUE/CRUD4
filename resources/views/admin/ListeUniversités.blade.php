@@ -8,13 +8,18 @@
         <div class="content-overlay"></div>
         <div class="header-navbar-shadow"></div>
         <div class="content-wrapper">
-            <a href="{{route('school.show',auth()->user()->id)}}" class="row mb-5" style="height: 50px; padding-bottom:20px;"><button class="btn btn-primary btn-lg ml-4 ajout d-md-block d-none">Ajouter une Ecole</button></a>           
+            <a href="{{route('password.index')}}" class="row mb-5" style="height: 50px; padding-bottom:20px;"><button class="btn btn-primary btn-lg ml-4 ajout d-md-block d-none">Ajouter une Ecole</button></a>           
        
             <div class="content-body">
                 <!-- Zero configuration table -->
                 <section id="column-selectors">
                     <div class="row">
                         <div class="col-12">
+                            @if (session('status'))
+                                <div class="alert alert-success">
+                                    {{ session('status') }}
+                                </div>
+                            @endif
                             <div class="card">
                                 <div class="card-content">
                                     <div class="card-body card-dashboard">
