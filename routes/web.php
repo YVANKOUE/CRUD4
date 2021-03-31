@@ -38,9 +38,6 @@ Route::namespace('user')->prefix('profil')->name('profil.')->middleware('can:man
 Route::middleware('can:management-users')->group(function(){
     Route::resource('school' , 'SchoolController');
 });
-Route::namespace('password')->group(function(){
-    Route::resource('password' , 'PasswordController');
-});
 
 Route::namespace('password')->group(function(){
     Route::resource('reset' , 'ResetController');

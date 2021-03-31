@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\password;
 
 use App\User;
+use App\faculty;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
@@ -16,7 +17,8 @@ class ResetController extends Controller
      */
     public function index()
     {
-        // 
+        $filiéres = faculty::all();
+        return view('admin.universités.create')->with('filiéres',$filiéres);
     }
 
     /**
@@ -42,15 +44,7 @@ class ResetController extends Controller
      */
     public function store(Request $request)
     { 
-       
-        $user = User::where('email', $request->email)->first();
-        if($user->email = ""){
-            
-            return view('auth.passwords.reset')->with('status' , 'email'.$user.'ne correspond pas a nos enregistrement');
-        }else{
-            $user->email = $user->email;
-            return view('home');
-        }
+    //    
     }
 
     /**

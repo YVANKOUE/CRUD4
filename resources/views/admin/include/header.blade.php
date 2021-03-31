@@ -163,7 +163,7 @@
                     <ul class="menu-content">
                         <li><a href="{{ route('school.index')}}"><i class="feather icon-circle"></i><span class="menu-item" data-i18n="Shop">List</span></a>
                         </li>
-                        <li><a href="{{route('password.index')}}"><i class="feather icon-circle"></i><span class="menu-item" data-i18n="Details">Create</span></a>
+                        <li><a href="{{route('reset.index')}}"><i class="feather icon-circle"></i><span class="menu-item" data-i18n="Details">Create</span></a>
                         </li>
                     </ul>
                 </li>

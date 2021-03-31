@@ -15,20 +15,9 @@
                         <div class="col-lg-6 col-md-12 col-sm-12">
                             <div class="card bg-analytics text-white">
                                 <div class="card-content">
-                                    <div class="card-body text-center">
-                                        <img src="../../../app-assets/images/elements/decore-left.png" class="img-left" alt="
+                                    <div class="text-center">
+                                        <img style="" class="bg-none" src="{{asset('app-assets/images/IMG-20210331-WA0045.jpg')}}" class="img-left" alt="
             card-img-left">
-                                        <img src="../../../app-assets/images/elements/decore-right.png" class="img-right" alt="
-            card-img-right">
-                                        <div class="avatar avatar-xl bg-primary shadow mt-0">
-                                            <div class="avatar-content">
-                                                <i class="feather icon-award white font-large-1"></i>
-                                            </div>
-                                        </div>
-                                        <div class="text-center">
-                                            <h1 class="mb-2 text-white">Congratulations John,</h1>
-                                            <p class="m-auto w-75">You have done <strong>57.6%</strong> more sales today. Check your new badge in your profile.</p>
-                                        </div>
                                     </div>
                                 </div>
                             </div>
