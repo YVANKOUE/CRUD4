@@ -8,7 +8,7 @@
         <div class="content-overlay"></div>
         <div class="header-navbar-shadow"></div>
         <div class="content-wrapper">
-            <a href="{{route('password.index')}}" class="row mb-5" style="height: 50px; padding-bottom:20px;"><button class="btn btn-primary btn-lg ml-4 ajout d-md-block d-none">Ajouter une Ecole</button></a>           
+            <a href="{{route('reset.index')}}" class="row mb-5" style="height: 50px; padding-bottom:20px;"><button class="btn btn-primary btn-lg ml-4 ajout d-md-block d-none">Ajouter une Ecole</button></a>           
        
             <div class="content-body">
                 <!-- Zero configuration table -->
